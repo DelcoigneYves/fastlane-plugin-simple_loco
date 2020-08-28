@@ -1,0 +1,14 @@
+{
+    "locales" : [
+      "en",
+      "fr",
+      "nl",
+      "de"
+    ],
+    "directory" : "fastlane/android/res",
+    "platform" : "android",
+    "key" : "",
+    "fallback" : "en",
+    "order": "id",
+    "filter": ["android"]
+  }

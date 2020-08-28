@@ -1,0 +1,19 @@
+lane :test_android do
+  simple_loco(conf_file_path: 'fastlane/Loco.Android.json')
+end
+
+lane :test_ios do
+  simple_loco(conf_file_path: 'fastlane/Loco.iOS.json')
+end
+
+lane :test_flutter do
+  simple_loco(conf_file_path: 'fastlane/Loco.Flutter.json')
+end
+
+lane :test_xamarin do
+  simple_loco(conf_file_path: 'fastlane/Loco.Xamarin.json')
+end
+
+lane :test_custom do
+  simple_loco(conf_file_path: 'fastlane/Loco.Custom.yml')
+end

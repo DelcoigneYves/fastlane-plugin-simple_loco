@@ -1,0 +1,13 @@
+{
+    "locales" : [
+      "en",
+      "fr",
+      "nl",
+      "de"
+    ],
+    "directory" : "fastlane/xamarin",
+    "platform" : "xamarin",
+    "key" : "",
+    "fallback" : "en",
+    "order": "id"
+  }

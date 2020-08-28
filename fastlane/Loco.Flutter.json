@@ -1,0 +1,13 @@
+{
+    "locales" : [
+      "en",
+      "fr",
+      "nl",
+      "de"
+    ],
+    "directory" : "fastlane/flutter/l10n",
+    "platform" : "flutter",
+    "key" : "",
+    "fallback" : "en",
+    "order": "id"
+  }

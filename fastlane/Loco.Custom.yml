@@ -1,0 +1,23 @@
+locales:
+  - en
+  - fr
+  - nl
+  - de
+directory: fastlane/custom/Resources
+platform: custom
+key: 
+custom_extension: .xml
+custom_file_name: strings
+fallback: en
+order: id
+filter: android
+format: android
+no_comments: true
+index:
+source:
+namespace:
+status:
+printf:
+charset:
+breaks:
+no_folding:

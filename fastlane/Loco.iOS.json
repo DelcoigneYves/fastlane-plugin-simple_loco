@@ -1,0 +1,13 @@
+{
+    "locales" : [
+      "en",
+      "fr",
+      "nl",
+      "de"
+    ],
+    "directory" : "fastlane/ios/Resources",
+    "platform" : "ios",
+    "key" : "",
+    "fallback" : "en",
+    "order": "id"
+  }
