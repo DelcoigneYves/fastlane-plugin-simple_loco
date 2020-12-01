@@ -69,7 +69,7 @@ Example of a JSON config file:
     "directory" : "src/main/res",
     "platform" : "android",
     "key" : "<Your key here>",
-    "fallback_locale" : "en",
+    "fallback" : "en",
     "order": "id",
     "filter": ["android"]
 }
