@@ -382,7 +382,9 @@ module Fastlane
           used_extension = ".#{used_extension}"
         end
 
-        if is_default
+        if default_file_name.nil? || default_file_name.empty?
+          path = File.join(directory, locale + used_extension)
+        elsif is_default
           path = File.join(directory, default_file_name + used_extension)
         else
           path = File.join(directory, default_file_name + ".#{locale}" + used_extension)

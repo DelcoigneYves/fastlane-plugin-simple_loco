@@ -14,9 +14,10 @@ fastlane add_plugin simple_loco
 
 A simple implementation for exporting translations from [Loco](https://localise.biz/).
 
-This plugin is heavily inspired by https://github.com/JohnPaulConcierge/fastlane-plugin-loco, but some functionality has been removed and added. This plugin acts primarily as a wrapper implementation around the export single locale API call of Loco (see https://localise.biz/api/docs/export/exportlocale for full details).
+This plugin is heavily inspired by <https://github.com/JohnPaulConcierge/fastlane-plugin-loco>, but some functionality has been removed and added. This plugin acts primarily as a wrapper implementation around the export single locale API call of Loco (see <https://localise.biz/api/docs/export/exportlocale> for full details).
 
 There is advanced support for the following platforms:
+
 - Android
 - iOS
 - Xamarin (with resx resource files)
@@ -24,21 +25,24 @@ There is advanced support for the following platforms:
 
 For the platforms above, an extra adapter is available to create the correct folder and files needed to use the translations.
 
-For other platforms, a default implementation is provided (translation files will be saved like \<provided folder\>/\<provided file name\>.\<locale\>.\<extension\>)
+For other platforms, a default implementation is provided (translation files will be saved like \<provided folder\>/\<provided file name\>.\<locale\>.\<extension\>).
+If a custom file name is provided, then the name of the file for the default locale won't contain the locale.
+If no custom file name is provided, then the locale will be used instead.
 
 This plugin contains a single action `simple_loco`.
 
 This action uses a configuration file to generate the correct API call.
 
 The config file specifies the following properties:
+
 - locales: List of locales to fetch
 - directory: Directory to move translation files to
 - platform: Platform for the translations: choice between:
-    - Android
-    - iOS
-    - Xamarin
-    - Flutter
-    - Custom
+  - Android
+  - iOS
+  - Xamarin
+  - Flutter
+  - Custom
 - key: Key of the Loco project
 - Optional parameters:
   - format
@@ -55,10 +59,11 @@ The config file specifies the following properties:
   - no_comments
   - no_folding
 
-For an explanation of the optional parameters, please see the official API reference: https://localise.biz/api/docs/export/exportlocale
+For an explanation of the optional parameters, please see the official API reference: <https://localise.biz/api/docs/export/exportlocale>
 
 Example of a JSON config file:
-```
+
+``` JSON
 {
     "locales" : [
       "en",
@@ -76,7 +81,8 @@ Example of a JSON config file:
 ```
 
 Or in YAML:
-```
+
+``` YAML
 locales:
   - en
   - fr
@@ -95,12 +101,13 @@ custom_file_name: strings
 
 To run both the tests, and code style validation, run
 
-```
+``` bash
 rake
 ```
 
 To automatically fix many of the styling issues, use
-```
+
+``` bash
 rubocop -a
 ```
 
