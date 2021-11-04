@@ -227,13 +227,9 @@ module Fastlane
           raise "Unsupported config file format #{extension}, only JSON and YAML files are supported."
         end
 
-        if extension == ".json"
-          json = JSON.parse(File.read(path))        
-          return Config.new(json.each_with_object({}) { |(k, v), memo| memo[k.to_sym] = v; })
-        end
-
-        yaml = YAML.safe_load(File.read(path))
-        return Config.new(yaml.each_with_object({}) { |(k, v), memo| memo[k.to_sym] = v; })
+        data = YAML.safe_load(File.read(path))
+        config = data.each_with_object({}) { |(k, v), memo| memo[k.to_sym] = v; }
+        return Config.new(**config)
       end
     end
 
