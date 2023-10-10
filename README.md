@@ -38,11 +38,11 @@ The config file specifies the following properties:
 - locales: List of locales to fetch
 - directory: Directory to move translation files to
 - platform: Platform for the translations: choice between:
-  - Android
-  - iOS
-  - Xamarin
-  - Flutter
-  - Custom
+  - android
+  - ios
+  - xamarin
+  - flutter
+  - custom
 - key: Key of the Loco project
 - Optional parameters:
   - format

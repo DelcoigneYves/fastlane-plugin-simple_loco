@@ -72,7 +72,8 @@ module Fastlane
         if platform == PLATFORM_ANDROID
           @adapter = AndroidAdapter.new
         elsif platform == PLATFORM_IOS
-          @adapter = CocoaAdapter.new
+          @adapter = CocoaAdapter.new(
+            format: format)
         elsif platform == PLATFORM_FLUTTER
           @adapter = FlutterAdapter.new
         elsif platform == PLATFORM_XAMARIN
@@ -289,8 +290,18 @@ module Fastlane
     end
 
     class CocoaAdapter < BaseAdapter
+      def initialize(format:)
+        @format = format
+      end
+
+      attr_reader :format
+
       def allowed_extensions
-        return ['.strings', '.stringsdict']
+        if @format == 'plist'
+          return ['.strings']
+        else
+          return ['.strings', '.stringsdict']
+        end
       end
   
       def directory(locale, is_default)
@@ -298,7 +309,11 @@ module Fastlane
       end
   
       def default_file_name
-        return 'Localizable'
+        if @format == 'plist'
+          return 'InfoPlist'
+        else
+          return 'Localizable'
+        end
       end
     end
 
