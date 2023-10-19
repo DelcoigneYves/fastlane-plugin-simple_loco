@@ -29,6 +29,7 @@ module Fastlane
                      breaks: "",
                      no_comments: "",
                      no_folding: "",
+                     mapping: nil,
                      custom_extension: "",
                      custom_file_name: "")
 
@@ -68,6 +69,7 @@ module Fastlane
         @breaks = breaks
         @no_comments = no_comments
         @no_folding = no_folding
+        @mapping = mapping
   
         if platform == PLATFORM_ANDROID
           @adapter = AndroidAdapter.new
@@ -104,6 +106,7 @@ module Fastlane
       attr_reader :breaks
       attr_reader :no_comments
       attr_reader :no_folding
+      attr_reader :mapping
 
       def export_locales
 
@@ -215,8 +218,10 @@ module Fastlane
       end
   
       def locale_directory(locale, is_default)  
+        mapped_locale = @mapping && @mapping[locale] || locale
+
         return File.join(@directory,
-                  @adapter.directory(locale, is_default))
+                @adapter.directory(mapped_locale, is_default))
       end
   
       # Static method used to read a config file
